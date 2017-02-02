@@ -13,7 +13,7 @@ public class KthLargest {
         System.out.println("Select a k value: ");
         Scanner scan = new Scanner(System.in);
         int k = scan.nextInt();
-        int [] a = {11, 4, 5, 2, 9, 10, 3, 7, 1};
+        int [] a = {11, 3, 2, -2, -11, 11, 3, 7, 1};
 
         System.out.println(KthLargest(a, k));
     }
@@ -36,6 +36,7 @@ public class KthLargest {
     		return max;								       // This is the largest value of a[]
         else {
             int [] kth = new int [k];                      // Array to hold 1-->k largest values
+            Arrays.fill(kth, Integer.MIN_VALUE);
             kth [0] = max;
             for (int i = 0; i < kth.length; i++) {
                 for (int j = 0; j < original.length; j++) {
@@ -49,6 +50,7 @@ public class KthLargest {
         }
  	}
 
+    
     public static boolean contains(int[] a, int target) {
       for (int i = 0; i < a.length; i++) 
          if (target == a[i]) 
